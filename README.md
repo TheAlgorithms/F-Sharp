@@ -1,4 +1,6 @@
 # The Algorithms - F#
+![.NET Core](https://github.com/TheAlgorithms/F-Sharp/workflows/.NET%20Core/badge.svg)
+<br>
 This repository contains algorithms and data structures implemented in F# for eductional purposes.
 
 ## Overview
