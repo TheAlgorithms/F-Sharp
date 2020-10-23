@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Math\Fibonacci.fs" />
     <Compile Include="Sort\Insertion_Sort.fs" />
     <Compile Include="Sort\Gnome_Sort.fs" />
     <Compile Include="Sort\Cycle_Sort.fs" />
