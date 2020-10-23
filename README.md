@@ -6,6 +6,7 @@ This repository contains algorithms and data structures implemented in F# for ed
 ## Overview
 + [Algorithms](https://github.com/TheAlgorithms/F-Sharp/tree/main/Algorithms)
   + [Math](https://github.com/TheAlgorithms/F-Sharp/tree/main/Algorithms/Math)
+    + [Perfect Numbers](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Perfect_Numbers.fs)
     + [Fibonacci](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Fibonacci.fs)
   + [Sort](https://github.com/TheAlgorithms/F-Sharp/tree/main/Algorithms/Sort)
     + [Bubble Sort](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Sort/Bubble_Sort.fs)
