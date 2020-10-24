@@ -9,6 +9,7 @@
     <Compile Include="Math\Perfect_Numbers.fs" />
     <Compile Include="Math\Fibonacci.fs" />
     <Compile Include="Sort\Heap_Sort.fs" />
+    <Compile Include="Sort\Merge_Sort.fs" />
     <Compile Include="Sort\Insertion_Sort.fs" />
     <Compile Include="Sort\Gnome_Sort.fs" />
     <Compile Include="Sort\Cycle_Sort.fs" />
