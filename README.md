@@ -15,6 +15,7 @@ This repository contains algorithms and data structures implemented in F# for ed
     + [Gnome Sort](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Sort/Gnome_Sort.fs)
     + [Heap Sort](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Sort/Heap_Sort.fs)
     + [Merge Sort](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Sort/Merge_Sort.fs)
+    + [Pancake Sort](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Sort/Pancake_Sort.fs)
     + [Insertion Sort](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Sort/Insertion_Sort.fs)
 
 ## Contribution
