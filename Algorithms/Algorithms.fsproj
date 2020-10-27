@@ -8,6 +8,7 @@
   <ItemGroup>
     <Compile Include="Math\Perfect_Numbers.fs" />
     <Compile Include="Math\Fibonacci.fs" />
+    <Compile Include="Sort\Quick_Sort.fs" />
     <Compile Include="Sort\Pancake_Sort.fs" />
     <Compile Include="Sort\Heap_Sort.fs" />
     <Compile Include="Sort\Merge_Sort.fs" />
