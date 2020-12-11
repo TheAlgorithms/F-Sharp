@@ -12,9 +12,9 @@ module Split =
         let mutable value = ""
         if str.Contains separator then
             for c in str do
-                match c.ToString() with
+                match (string)c with
                 | c when c.Contains separator -> newStringList <- newStringList |> List.append <| [value]; value <- ""
-                | _ -> value <- value + c.ToString(); 
+                | _ -> value <- value + (string)c; 
             if value <> "" then newStringList <- newStringList |> List.append <| [value]; value <- ""
         else newStringList <- [value]
         newStringList
