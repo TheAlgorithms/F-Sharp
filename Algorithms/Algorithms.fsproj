@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +18,12 @@
     <Compile Include="Sort\Comb_Sort.fs" />
     <Compile Include="Sort\Bubble_Sort.fs" />
     <Compile Include="Program.fs" />
+    <Compile Include="Search\BinarySearch.fs" />
+    <Compile Include="Strings\Split.fs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Search\" />
+    <Folder Include="Strings\" />
+  </ItemGroup>
 </Project>
