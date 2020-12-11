@@ -22,6 +22,7 @@
     <Compile Include="Strings\Split.fs" />
     <Compile Include="Strings\ReverseLetters.fs" />
     <Compile Include="Strings\WordOccurrence.fs" />
+    <Compile Include="Strings\RemoveDuplicates.fs" />
   </ItemGroup>
 
   <ItemGroup>
