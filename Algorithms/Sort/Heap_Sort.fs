@@ -1,4 +1,4 @@
-namespace Sort
+namespace Algorithms.Sort
 
 module HeapSort =
     let inline swap (a: 'T[]) i j =

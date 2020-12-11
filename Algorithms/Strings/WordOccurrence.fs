@@ -1,4 +1,4 @@
-﻿namespace Strings
+﻿namespace Algorithms.Strings
 open System.Collections.Generic
 
 module WordOccurence =

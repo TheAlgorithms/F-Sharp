@@ -1,4 +1,6 @@
-﻿module ReverseWords =
+﻿namespace Algorithms.Strings
+
+module ReverseWords =
     /// <summary>
     /// Reverses words in a given string
     /// </summary>

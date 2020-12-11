@@ -1,4 +1,4 @@
-namespace Sort
+namespace Algorithms.Sort
 
 module PancakeSort =
     let show data = data |> Array.iter (printf "%d ") ; printfn ""

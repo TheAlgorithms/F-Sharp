@@ -1,4 +1,4 @@
-namespace Math
+namespace Algorithms.Math
 
 module Perfect_Numbers =
     let IsPerfect (number: int) =

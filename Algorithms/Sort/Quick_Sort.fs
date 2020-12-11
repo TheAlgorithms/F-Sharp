@@ -1,4 +1,4 @@
-namespace Sort
+namespace Algorithms.Sort
 
 module QuickSort =
     let Sort lst =

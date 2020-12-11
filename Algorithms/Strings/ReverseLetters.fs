@@ -1,4 +1,4 @@
-﻿namespace Strings
+﻿namespace Algorithms.Strings
 
 module ReverseLetters =
     /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace Sort
+﻿namespace Algorithms.Sort
 
 module InsertionSort =
     let Sort list: 'T[] =

@@ -1,4 +1,4 @@
-﻿namespace Sort
+﻿namespace Algorithms.Sort
 
 module BubbleSort =
     let rec Sort list: 'T[] =
