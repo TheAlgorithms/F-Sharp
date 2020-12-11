@@ -23,6 +23,7 @@
     <Compile Include="Strings\ReverseLetters.fs" />
     <Compile Include="Strings\WordOccurrence.fs" />
     <Compile Include="Strings\RemoveDuplicates.fs" />
+    <Compile Include="Strings\ReverseWords.fs" />
   </ItemGroup>
 
   <ItemGroup>

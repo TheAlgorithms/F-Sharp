@@ -8,6 +8,9 @@ module ReverseLetters =
     /// <returns>Reversed string</returns>
     let reverseLetters(input: string) =
         let mutable str = ""
-        for i in input do
-            str <- str.Insert(0, i.ToString())
+        for phrase in input.Split() do
+            let mutable word = ""
+            for letter in phrase do
+                word <- word.Insert(0, (string)letter)
+            str <- str + word + " "
         str
