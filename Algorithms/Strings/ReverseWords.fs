@@ -7,5 +7,5 @@
     let reverseWords(input: string) =
         let mutable str = ""
         for i in input.Split() do
-            str <- str.Insert(0, i.ToString() + " ")
+            str <- str.Insert(0, i + " ")
         str
