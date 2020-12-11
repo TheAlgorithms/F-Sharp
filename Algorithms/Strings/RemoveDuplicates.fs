@@ -1,7 +1,8 @@
 ﻿namespace Algorithms.Strings
 
-open Microsoft.FSharp.Collections
-
+/// <summary>
+/// Remove duplicates from sentence
+/// <summary>
 module RemoveDuplicates =
     let removeDuplicates (string: string) =
         let mutable newString = ""
