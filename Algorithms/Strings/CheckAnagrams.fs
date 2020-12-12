@@ -8,7 +8,7 @@ module CheckAnagrams =
     /// arranged differently (ignoring the case).
     /// </summary>
     /// <param name="string1">First string</param>
-    /// <param name="string1">Second string</param>
+    /// <param name="string2">Second string</param>
     /// <returns>Boolean</returns>
     let isAnagram (string1: string, string2: string) =
         let a =
