@@ -23,6 +23,7 @@
     <Compile Include="Strings/ReverseWords.fs" />
     <Compile Include="Strings\Upper.fs" />
     <Compile Include="Strings\Capitalize.fs" />
+    <Compile Include="Strings\CheckAnagrams.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
