@@ -21,6 +21,7 @@
     <Compile Include="Strings/WordOccurrence.fs" />
     <Compile Include="Strings/RemoveDuplicates.fs" />
     <Compile Include="Strings/ReverseWords.fs" />
+    <Compile Include="Strings\Upper.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
