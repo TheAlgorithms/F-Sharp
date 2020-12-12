@@ -8,5 +8,5 @@ module Program =
         // for item in InsertionSort.Sort list do
         //    System.Console.WriteLine item
         Math.Fibonacci.PrintSerie 1 0
-        
+
         0

@@ -6,7 +6,7 @@ module ReverseWords =
     /// </summary>
     /// <param name="input">String to reverse.</param>
     /// <returns>Reversed string</returns>
-    let reverseWords(input: string) =
+    let reverseWords (input: string) =
         let mutable str = ""
         for i in input.Split() do
             str <- str.Insert(0, i + " ")

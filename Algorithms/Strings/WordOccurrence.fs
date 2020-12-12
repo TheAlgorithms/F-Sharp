@@ -1,8 +1,9 @@
 ﻿namespace Algorithms.Strings
+
 open System.Collections.Generic
 
 module WordOccurence =
-    let wordOccurence (sentence : string) =
+    let wordOccurence (sentence: string) =
         // Creating a dictionary containing count of each word
         let occurence = new Dictionary<string, int>()
         for word in sentence.Split(" ") do

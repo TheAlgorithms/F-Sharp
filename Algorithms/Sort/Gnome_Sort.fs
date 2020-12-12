@@ -1,7 +1,7 @@
 ﻿namespace Algorithms.Sort
 
 module GnomeSort =
-    let Sort list: 'T[] =
+    let Sort list: 'T [] =
         let mutable list = list |> Array.copy
         let mutable first = 1
         let mutable second = 2

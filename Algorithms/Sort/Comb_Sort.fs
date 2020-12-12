@@ -1,14 +1,13 @@
 ﻿namespace Algorithms.Sort
 
 module CombSort =
-    let Sort list: 'T[] =
+    let Sort list: 'T [] =
         let mutable list = list |> Array.copy
         let mutable gap = double list.Length
         let mutable swaps = true
         while gap > 1.0 || swaps do
             gap <- gap / 1.247330950103979
-            if gap < 1.0 then
-                gap <- 1.0
+            if gap < 1.0 then gap <- 1.0
             let mutable i = 0
             swaps <- false
             while i + int gap < list.Length do
