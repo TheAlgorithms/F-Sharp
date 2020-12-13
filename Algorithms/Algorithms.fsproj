@@ -24,6 +24,7 @@
     <Compile Include="Strings\Upper.fs" />
     <Compile Include="Strings\Capitalize.fs" />
     <Compile Include="Strings\CheckAnagrams.fs" />
+    <Compile Include="Strings\SwapCase.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
