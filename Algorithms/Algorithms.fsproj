@@ -26,6 +26,7 @@
     <Compile Include="Strings\CheckAnagrams.fs" />
     <Compile Include="Strings\SwapCase.fs" />
     <Compile Include="Strings\NaiveStringSearch.fs" />
+    <Compile Include="Strings\RabinKarp.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
