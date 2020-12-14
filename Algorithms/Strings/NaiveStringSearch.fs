@@ -13,14 +13,13 @@
 *)
 
 module NaiveStringSearch =
-    let naivePatternSearch (s: string, pattern:string):list<int> =
+    let naivePatternSearch (s: string, pattern: string): list<int> =
         let patLen = pattern.Length
         let mutable position = []
-        for i in 1.. (s.Length - patLen + 1) do
+        for i in 1 .. (s.Length - patLen + 1) do
             let mutable matchFound = true
-            for j in 1.. (patLen) do
-                if s.[i + j] <> pattern.[j] then
-                    matchFound <- false
-            if matchFound then
-                position <- List.append [i] <| position
+            for j in 1 .. (patLen) do
+                if s.[i + j] <> pattern.[j] then matchFound <- false
+            if matchFound
+            then position <- List.append [ i ] <| position
         position
