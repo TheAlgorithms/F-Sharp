@@ -1,7 +1,4 @@
-﻿namespace Algorithms.Strings
-
-
-/// https://cp-algorithms.com/string/prefix-function.html
+﻿/// https://cp-algorithms.com/string/prefix-function.html
 ///
 /// Prefix function Knuth–Morris–Pratt algorithm
 ///
@@ -9,6 +6,8 @@
 ///
 /// E.x. Finding longest prefix which is also suffix
 /// Time Complexity: O(n) - where n is the length of the string
+namespace Algorithms.Strings
+
 module PrefixFunction =
 
     /// <summary>
@@ -21,30 +20,29 @@ module PrefixFunction =
     /// <code>
     /// prefix_function "aabcdaabc"
     /// [0, 1, 0, 0, 0, 1, 2, 3, 4]
-    /// 
+    ///
     /// prefix_function("asdasdad")
     /// [0, 0, 0, 1, 2, 3, 4, 0]
     /// </code>
     /// </example>
     /// <param name="inputString"></param>
     /// <returns>A string of <c>int</c></returns>
-    let prefixFunction (inputString: string):list<int> =
-        
+    let prefixFunction (inputString: string): list<int> =
+
         // List for the result values
-        let mutable prefixResult = [inputString.Length] |> List.toArray
+        let mutable prefixResult = [ inputString.Length ] |> List.toArray
 
         for i = 1 to inputString.Length do
             // Use last results for better performance - dynamic programming
             let mutable j = prefixResult.[i - 1]
             while j > 0 && inputString.[i] <> inputString.[j] do
                 j <- prefixResult.[j - 1]
-            if inputString.[i] = inputString.[j] then
-                j <- j + 1
-            prefixResult.SetValue(j,i) 
+            if inputString.[i] = inputString.[j] then j <- j + 1
+            prefixResult.SetValue(j, i)
         prefixResult |> List.ofArray
 
     /// <summary>
-    /// Prefix-function use case 
+    /// Prefix-function use case
     /// Finding longest prefix which is suffix as well
     /// </summary>
     /// <example>
@@ -61,4 +59,5 @@ module PrefixFunction =
     /// <returns>Returns <c>int</c></returns>
     let longestPrefix (inputString: string): int =
         // Just returning maximum value of the array gives us answer
-        prefixFunction(inputString) |> System.Linq.Enumerable.Max
+        prefixFunction (inputString)
+        |> System.Linq.Enumerable.Max
