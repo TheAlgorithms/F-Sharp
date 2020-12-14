@@ -4,6 +4,24 @@ module Upper =
     /// <summary>
     /// This function will capitalize the first letter of a sentence or a word
     /// </summary>
+    /// <example>
+    /// <code>
+    /// capitalize("hello world")
+    /// 'Hello world'
+    ///
+    /// capitalize("123 hello world")
+    /// '123 hello world'
+    ///
+    /// capitalize(" hello world")
+    /// ' hello world'
+    ///
+    /// capitalize("a")
+    /// 'A'
+    ///
+    /// capitalize("")
+    /// ''
+    /// </code>
+    /// </example>
     /// <param name="sentence">String to capitalize.</param>
     /// <returns>Capitalized string</returns>
     let capitalize (sentence: string) =
