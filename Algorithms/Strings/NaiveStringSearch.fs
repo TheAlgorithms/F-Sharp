@@ -7,7 +7,7 @@
 /// the mainString if pattern is found from position i it add it to
 /// the answer and does the same for position i+1
 /// </summary>
-/// 
+///
 /// <remarks>
 /// Complexity : O(n*m)
 ///     n=length of main string
@@ -20,16 +20,16 @@ module NaiveStringSearch =
     /// <code>
     /// naive_pattern_search("ABAAABCDBBABCDDEBCABC", "ABC")
     /// [4, 10, 18]
-    /// 
+    ///
     /// naive_pattern_search("ABC", "ABAAABCDBBABCDDEBCABC")
     /// []
-    /// 
+    ///
     /// naive_pattern_search("", "ABC")
     /// []
-    /// 
+    ///
     /// naive_pattern_search("TEST", "TEST")
     /// [0]
-    /// 
+    ///
     /// naive_pattern_search("ABCDEGFTEST", "TEST")
     /// [7]
     /// </code>
