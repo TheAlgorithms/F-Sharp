@@ -7,7 +7,7 @@ module RabinKarp =
     // Modulus to hash a string
     let modulus = 1000003
 
-    let rabitKarp(pattern:string, text:string):bool =
+    let rabitKarp (pattern: string, text: string): bool =
         (*
             The Rabin-Karp Algorithm for finding a pattern within a piece of text
             with complexity O(nm), most efficient when it is used with multiple patterns
@@ -38,17 +38,20 @@ module RabinKarp =
             // Calculating the hash of pattern and substring of text
 
             for i = 0 to patLen do
-                patternHash <- ((int)(pattern.[i]) + patternHash * alphabetSize) % modulus
-                textHash <- (((int)text.[i]) + textHash * alphabetSize) % modulus
-                
+                patternHash <- ((int) (pattern.[i]) + patternHash * alphabetSize) % modulus
+                textHash <- (((int) text.[i]) + textHash * alphabetSize) % modulus
+
                 modulusPower <- (modulusPower * alphabetSize) % modulus
-            
+
             for i = 0 to (textLen - patLen + 1) do
                 match i with
-                | i when textHash = patternHash && text.[i + patLen] = (char)pattern -> result <- true
+                | i when textHash = patternHash
+                         && text.[i + patLen] = (char) pattern -> result <- true
                 | _ -> result <- false
 
                 // Calculate the https://en.wikipedia.org/wiki/Rolling_hash
-                textHash <- (textHash - (int) (text.[i]) * modulusPower) * alphabetSize + (int)(text.[i + patLen]) % modulus
+                textHash <-
+                    (textHash - (int) (text.[i]) * modulusPower)
+                    * alphabetSize
+                    + (int) (text.[i + patLen]) % modulus
             result
-    
