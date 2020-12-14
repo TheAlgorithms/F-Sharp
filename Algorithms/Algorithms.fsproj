@@ -28,6 +28,7 @@
     <Compile Include="Strings\NaiveStringSearch.fs" />
     <Compile Include="Strings\RabinKarp.fs" />
     <Compile Include="Strings\PrefixFunction.fs" />
+    <Compile Include="Strings\Lower.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
