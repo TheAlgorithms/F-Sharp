@@ -10,13 +10,13 @@ module CheckAnagrams =
     /// <code>
     /// check_anagrams('Silent', 'Listen')
     /// True
-    /// 
+    ///
     /// check_anagrams('This is a string', 'Is this a string')
     /// True
-    /// 
+    ///
     /// check_anagrams('This is    a      string', 'Is     this a string')
     /// True
-    /// 
+    ///
     /// check_anagrams('There', 'Their')
     /// False
     /// </code>
