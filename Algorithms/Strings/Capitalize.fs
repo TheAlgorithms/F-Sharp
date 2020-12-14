@@ -1,6 +1,6 @@
 namespace Algorithms.Strings
 
-module Upper =
+module Capitalize =
     /// <summary>
     /// This function will capitalize the first letter of a sentence or a word
     /// </summary>
