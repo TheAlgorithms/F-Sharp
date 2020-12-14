@@ -1,4 +1,6 @@
-﻿/// https://cp-algorithms.com/string/prefix-function.html
+﻿namespace Algorithms.Strings
+
+/// https://cp-algorithms.com/string/prefix-function.html
 ///
 /// Prefix function Knuth–Morris–Pratt algorithm
 ///
@@ -6,8 +8,6 @@
 ///
 /// E.x. Finding longest prefix which is also suffix
 /// Time Complexity: O(n) - where n is the length of the string
-namespace Algorithms.Strings
-
 module PrefixFunction =
 
     /// <summary>
