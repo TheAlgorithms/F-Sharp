@@ -27,7 +27,7 @@ module RabinKarp =
     /// <param name="pattern"></param>
     /// <param name="text"></param>
     /// <returns></returns>
-    let rabitKarp (pattern: string, text: string): bool =
+    let rabinKarp (pattern: string, text: string): bool =
 
         let mutable result = false
 
