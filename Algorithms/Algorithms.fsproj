@@ -33,6 +33,7 @@
     <Compile Include="Strings\ZFunction.fs" />
     <Compile Include="Strings\MinCostStringConversion.fs" />
     <Compile Include="Strings\Manacher.fs" />
+    <Compile Include="Strings\LevenshteinDistance.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
