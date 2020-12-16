@@ -32,6 +32,7 @@
     <Compile Include="Strings\CheckPangram.fs" />
     <Compile Include="Strings\ZFunction.fs" />
     <Compile Include="Strings\MinCostStringConversion.fs" />
+    <Compile Include="Strings\Manacher.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
