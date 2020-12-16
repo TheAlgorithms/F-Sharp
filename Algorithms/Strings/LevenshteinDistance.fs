@@ -15,15 +15,15 @@ module LevenshteinDistance =
         // if secondWord.Length = 0 then
         //     return len(first_word)
         match secondWord.Length with
-        | s when s > firstWord.Length -> levenshteinDistance(secondWord, firstWord)
+        | s when s > firstWord.Length -> levenshteinDistance (secondWord, firstWord)
         | 0 -> firstWord.Length
         | _ ->
-            let mutable previousRow = [secondWord.Length + 1]
+            let mutable previousRow = [ secondWord.Length + 1 ]
 
             for i in 0 .. firstWord.Length - 1 do
                 let c1 = firstWord.[i]
 
-                let mutable currentRow = [i + 1]
+                let mutable currentRow = [ i + 1 ]
 
                 for j in 0 .. secondWord.Length do
                     let c2 = secondWord.[j]
@@ -34,9 +34,9 @@ module LevenshteinDistance =
                     let substitutions = previousRow.[j]
 
                     // Get the minimum to append to the current row
-                    currentRow <- currentRow |> List.append [(min insertions (min deletions substitutions))]
+                    currentRow <-
+                        currentRow
+                        |> List.append [ (min insertions (min deletions substitutions)) ]
 
                 previousRow <- currentRow
             previousRow.[-1]
-
-
