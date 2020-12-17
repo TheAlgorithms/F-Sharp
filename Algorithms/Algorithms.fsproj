@@ -1,40 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Math/Perfect_Numbers.fs" />
-    <Compile Include="Math/Fibonacci.fs" />
-    <Compile Include="Sort/Quick_Sort.fs" />
-    <Compile Include="Sort/Pancake_Sort.fs" />
-    <Compile Include="Sort/Heap_Sort.fs" />
-    <Compile Include="Sort/Merge_Sort.fs" />
-    <Compile Include="Sort/Insertion_Sort.fs" />
-    <Compile Include="Sort/Gnome_Sort.fs" />
-    <Compile Include="Sort/Cycle_Sort.fs" />
-    <Compile Include="Sort/Comb_Sort.fs" />
-    <Compile Include="Sort/Bubble_Sort.fs" />
-    <Compile Include="Search/BinarySearch.fs" />
-    <Compile Include="Strings/Split.fs" />
-    <Compile Include="Strings/ReverseLetters.fs" />
-    <Compile Include="Strings/WordOccurrence.fs" />
-    <Compile Include="Strings/RemoveDuplicates.fs" />
-    <Compile Include="Strings/ReverseWords.fs" />
-    <Compile Include="Strings\Upper.fs" />
-    <Compile Include="Strings\Capitalize.fs" />
-    <Compile Include="Strings\CheckAnagrams.fs" />
-    <Compile Include="Strings\SwapCase.fs" />
-    <Compile Include="Strings\NaiveStringSearch.fs" />
-    <Compile Include="Strings\RabinKarp.fs" />
-    <Compile Include="Strings\PrefixFunction.fs" />
-    <Compile Include="Strings\Lower.fs" />
-    <Compile Include="Strings\CheckPangram.fs" />
-    <Compile Include="Strings\ZFunction.fs" />
-    <Compile Include="Strings\MinCostStringConversion.fs" />
-    <Compile Include="Strings\Manacher.fs" />
-    <Compile Include="Strings\LevenshteinDistance.fs" />
-    <Compile Include="Strings\KnuthMorrisPratt.fs" />
-    <Compile Include="Program.fs" />
-  </ItemGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>5.0</LangVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="Math/Perfect_Numbers.fs" />
+		<Compile Include="Math/Fibonacci.fs" />
+		<Compile Include="Sort/Quick_Sort.fs" />
+		<Compile Include="Sort/Pancake_Sort.fs" />
+		<Compile Include="Sort/Heap_Sort.fs" />
+		<Compile Include="Sort/Merge_Sort.fs" />
+		<Compile Include="Sort/Insertion_Sort.fs" />
+		<Compile Include="Sort/Gnome_Sort.fs" />
+		<Compile Include="Sort/Cycle_Sort.fs" />
+		<Compile Include="Sort/Comb_Sort.fs" />
+		<Compile Include="Sort/Bubble_Sort.fs" />
+		<Compile Include="Search/BinarySearch.fs" />
+		<Compile Include="Strings/Split.fs" />
+		<Compile Include="Strings/ReverseLetters.fs" />
+		<Compile Include="Strings/WordOccurrence.fs" />
+		<Compile Include="Strings/RemoveDuplicates.fs" />
+		<Compile Include="Strings/ReverseWords.fs" />
+		<Compile Include="Strings\Upper.fs" />
+		<Compile Include="Strings\Capitalize.fs" />
+		<Compile Include="Strings\CheckAnagrams.fs" />
+		<Compile Include="Strings\SwapCase.fs" />
+		<Compile Include="Strings\NaiveStringSearch.fs" />
+		<Compile Include="Strings\RabinKarp.fs" />
+		<Compile Include="Strings\PrefixFunction.fs" />
+		<Compile Include="Strings\Lower.fs" />
+		<Compile Include="Strings\CheckPangram.fs" />
+		<Compile Include="Strings\ZFunction.fs" />
+		<Compile Include="Strings\MinCostStringConversion.fs" />
+		<Compile Include="Strings\Manacher.fs" />
+		<Compile Include="Strings\LevenshteinDistance.fs" />
+		<Compile Include="Strings\KnuthMorrisPratt.fs" />
+		<Compile Include="Strings\JaroWinkler.fs" />
+		<Compile Include="Program.fs" />
+	</ItemGroup>
 </Project>
