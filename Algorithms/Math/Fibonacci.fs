@@ -1,4 +1,4 @@
-﻿namespace Math
+﻿namespace Algorithms.Math
 
 module Fibonacci =
     let rec PrintSerie (one: int) (two: int) =
