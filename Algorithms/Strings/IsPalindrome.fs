@@ -7,8 +7,5 @@ module IsPalindrome =
     /// <param name="s"></param>
     /// <returns>Boolean</returns>
     let isPalindrome (s: string): bool =
-        let refS = ref s
-        refS
-        := [ for character in s.ToLower() -> (string) character ]
-        |> List.fold (+) ""
-        string (refS.Value.ToCharArray() |> Array.rev) = refS.Value
+        let str = str |> Seq.filter ((<>) ' ') |> Seq.toList
+        str = (str |> List.rev)
