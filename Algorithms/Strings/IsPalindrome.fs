@@ -7,5 +7,7 @@ module IsPalindrome =
     /// <param name="str"></param>
     /// <returns>Boolean</returns>
     let isPalindrome (str: string): bool =
-        let str = str |> Seq.filter ((<>) ' ') |> Seq.toList
+        let str =
+            str |> Seq.filter ((<>) ' ') |> Seq.toList
+
         str = (str |> List.rev)

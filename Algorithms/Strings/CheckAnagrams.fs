@@ -26,9 +26,9 @@ module CheckAnagrams =
     /// <returns>Boolean</returns>
     let isAnagram (string1: string, string2: string) =
         let a =
-            string1.ToCharArray() |> Array.sortBy (id)
+            string1.ToCharArray() |> Array.sortBy (id) |> Array.filter(fun c -> c <> ' ')
 
         let b =
-            string2.ToCharArray() |> Array.sortBy (id)
+            string2.ToCharArray() |> Array.sortBy (id) |> Array.filter(fun c -> c <> ' ')
 
         a = b
