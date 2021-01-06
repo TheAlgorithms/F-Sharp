@@ -1,6 +1,6 @@
 ﻿namespace Algorithms.Strings
 
-module Manchester =
+module Manacher =
     type List<'a> with
         member this.LengthInDouble = (double) this.Length
 

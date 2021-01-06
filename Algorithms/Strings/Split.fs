@@ -7,7 +7,7 @@ module Split =
     /// <param name="str">String to split into lists</param>
     /// <param name="separator">The separator on what you would like to separate your strings</param>
     /// <returns>A string list</returns>
-    let split (str: string, separator: string) =
+    let split (str: string, separator: char): string list =
         let mutable newStringList = []
         let mutable value = ""
         if str.Contains separator then

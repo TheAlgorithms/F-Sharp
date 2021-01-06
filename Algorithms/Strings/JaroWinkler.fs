@@ -60,6 +60,5 @@ module JaroWinkler =
         for c1, c2 in List.zip [ str1.[..4] ] [ str2.[..4] ] do
             match c1 with
             | c2 -> prefixLen <- prefixLen + 1
-            | _ -> ()
 
         jaro + 0.1 * (double) prefixLen * (1.0 - jaro)

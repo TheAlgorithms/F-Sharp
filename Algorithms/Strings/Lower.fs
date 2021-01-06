@@ -22,9 +22,9 @@ module Lower =
     /// 'what'
     /// </code>
     /// </example>
-    /// <param name="word"></param>
+    /// <param name="input"></param>
     /// <returns></returns>
-    let lower (word: string): string =
+    let lower (input: string): string =
         input.Split()
         |> Array.map
             (fun word ->
