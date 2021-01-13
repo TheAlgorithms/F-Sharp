@@ -57,10 +57,6 @@ module RabinKarp =
 
 
             for i in 0 .. (textLen - patLen + 1) do
-                let patterintext = text.[i..(i + (patLen - 1))]
-                let something = text.[i..(i + patLen)] = pattern
-                let somethingelse = textHash = patternHash
-
                 if textHash = patternHash
                    && text.[i..i + (patLen - 1)] = pattern then
                     result <- true
