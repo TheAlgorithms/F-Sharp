@@ -3,11 +3,14 @@
 open System.Collections.Generic
 
 module WordOccurrence =
-    let wordOccurrence (sentence: string) =
+    let wordOccurrence (sentence: string): Map<string, int> =
         // Creating a dictionary containing count of each word
-        let occurrence = new Dictionary<string, int>()
-        for word in sentence.Split(" ") do
+        let mutable occurrence: Map<string, int> = Map.empty
+
+        for word in sentence.Split() do
             match word with
-            | w when occurrence.ContainsKey(w) -> occurrence.Item(w) <- occurrence.GetValueOrDefault(w) + 1
-            | _ -> occurrence.Add(word, 1)
+            | "" -> ignore word
+            | w when occurrence.ContainsKey(word) -> printfn "%A" (word)
+            | _ -> occurrence <- occurrence.Add(word, 1)
+
         occurrence

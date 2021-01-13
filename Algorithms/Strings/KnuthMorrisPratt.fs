@@ -5,12 +5,16 @@ module KnuthMorrisPratt =
         let mutable failure = [ 0 ]
         let mutable i = 0
         let mutable j = 1
+
         while j < pattern.Length do
-            if pattern.[i] = pattern.[j] then i <- i + 1
-            elif i > 0 then i <- failure.[i - 1]
+            if pattern.[i] = pattern.[j] then
+                i <- i + 1
+            elif i > 0 then
+                i <- failure.[i - 1]
 
             j <- j + 1
             failure <- failure |> List.append [ i ]
+
         failure
 
     /// <summary>
@@ -28,10 +32,12 @@ module KnuthMorrisPratt =
 
         // 2) Step through text searching for pattern
         let mutable i, j = 0, 0 // Index into text, pattern
+
         while i < text.Length do
             if pattern.[j] = text.[i] then
-                if j = pattern.Length - 1 && (not result)
-                then result <- true
+                if j = pattern.Length - 1 && (not result) then
+                    result <- true
+
                 j <- j + 1
 
             // If this is a prefix in our pattern
@@ -40,4 +46,5 @@ module KnuthMorrisPratt =
                 j <- failure.[j - 1]
 
             i <- i + 1
+
         result

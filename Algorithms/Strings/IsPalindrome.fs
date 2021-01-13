@@ -8,6 +8,8 @@ module IsPalindrome =
     /// <returns>Boolean</returns>
     let isPalindrome (str: string): bool =
         let str =
-            str |> Seq.filter ((<>) ' ') |> Seq.toList
+            str.ToLower()
+            |> Seq.filter (System.Char.IsLetterOrDigit)
+            |> Seq.toList
 
         str = (str |> List.rev)

@@ -24,11 +24,17 @@ module CheckAnagrams =
     /// <param name="string1">First string</param>
     /// <param name="string2">Second string</param>
     /// <returns>Boolean</returns>
-    let isAnagram (string1: string, string2: string) =
+    let isAnagram (string1: string, string2: string): bool =
         let a =
-            string1.ToCharArray() |> Array.sortBy (id) |> Array.filter(fun c -> c <> ' ')
+            string1.ToLower().ToCharArray()
+            |> Array.filter (fun chars -> chars <> ' ')
+            |> Array.sort
+            |> System.String.Concat
 
         let b =
-            string2.ToCharArray() |> Array.sortBy (id) |> Array.filter(fun c -> c <> ' ')
+            string2.ToLower().ToCharArray()
+            |> Array.filter (fun chars -> chars <> ' ')
+            |> Array.sort
+            |> System.String.Concat
 
         a = b

@@ -7,8 +7,8 @@ open Algorithms.Strings
 type SplitTests () =
 
     [<TestMethod>]
-    member this.split () =
+    member this.Split () =
         let expected =  ["apple"; "banana"; "cherry"; "orange"]
-        let actual = Split.split("apple#banana#cherry#orange", '#')
+        let actual = Split.Split("apple#banana#cherry#orange", '#')
         Assert.AreEqual(expected, actual)
 

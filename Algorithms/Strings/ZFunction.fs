@@ -10,8 +10,7 @@ namespace Algorithms.Strings
 module ZFunction =
 
     let goNext (i, zResult: array<int>, s: string) =
-        i
-        + zResult.[i] < s.Length
+        i + zResult.[i] < s.Length
         && s.[zResult.[i]] = s.[i + zResult.[i]]
 
     /// <summary>
@@ -23,15 +22,15 @@ module ZFunction =
     /// <returns></returns>
     let zFunction (inputString: string): list<int> =
         let mutable zResult =
-            [ for i in 1 .. inputString.Length -> 0 ]
-            |> List.toArray
+            [| for i in 1 .. inputString.Length -> 0 |]
         // Initialize interval's left pointer and right pointer
         let mutable leftPointer, rightPointer = 0, 0
-        for i = 1 to inputString.Length do
+
+        for i in 1 .. inputString.Length - 1 do
             // Case when current index is inside the interval
             if i <= rightPointer then
                 let minEdge =
-                    min (rightPointer - i + 1, zResult.[i - leftPointer])
+                    min (rightPointer - i + 1) (zResult.[i - leftPointer])
 
                 zResult.SetValue(minEdge, i)
 
@@ -41,7 +40,7 @@ module ZFunction =
             // if new index's result gives us more right interval,
             // we've to update left_pointer and right_pointer
             if i + zResult.[i] - 1 > rightPointer then
-                leftPointer <- i + zResult.[i] - 1
+                leftPointer <- i
                 rightPointer <- i + zResult.[i] - 1
 
         zResult |> List.ofArray
@@ -57,5 +56,7 @@ module ZFunction =
             // If value is greater then length of the pattern string
             // that means this index is starting position of substring
             // which is equal to pattern string
-            if value >= pattern.Length then answer <- answer + 1
+            if value >= pattern.Length then
+                answer <- answer + 1
+
         answer

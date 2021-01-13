@@ -10,7 +10,7 @@ type LevenshteinDistanceTests () =
     [<DataRow("planet", "planetary", 3)>]
     [<DataRow("", "test", 4)>]
     [<DataRow("book", "back", 2)>]
-    [<DataRow("book", "book", 2)>]
+    [<DataRow("book", "book", 0)>]
     [<DataRow("test", "", 4)>]
     [<DataRow("", "", 0)>]
     [<DataRow("orchestration", "container", 10)>]

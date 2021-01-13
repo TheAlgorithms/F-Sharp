@@ -9,29 +9,25 @@
 namespace Algorithms.Strings
 
 module MinCostStringConversion =
-    let computeTransformTables (sourceString: string,
-                                destinationString: string,
-                                copyCost: int,
-                                replaceCost: int,
-                                deleteCost: int,
-                                insertCost: int)
-                               : list<int> * list<string> =
+    let computeTransformTables
+        (
+            sourceString: string,
+            destinationString: string,
+            copyCost: int,
+            replaceCost: int,
+            deleteCost: int,
+            insertCost: int
+        ): list<int> * list<string> =
         let sourceSeq = [ sourceString ]
         let destinationSeq = [ destinationString ]
         let lenSourceSeq = sourceSeq.Length
         let lenDestinationSeq = destinationSeq.Length
 
         let costs =
-            [ for i in 0 .. (lenSourceSeq + 1) ->
-                [ for i in 0 .. lenDestinationSeq + 1 -> 0 ]
-                |> List.toArray ]
-            |> List.toArray
+            [| for i in 0 .. (lenSourceSeq + 1) -> [| for i in 0 .. lenDestinationSeq + 1 -> 0 |] |]
 
         let ops =
-            [ for i in 0 .. lenSourceSeq + 1 ->
-                [ for i in 0 .. lenDestinationSeq + 1 -> "" ]
-                |> List.toArray ]
-            |> List.toArray
+            [| for i in 0 .. lenSourceSeq + 1 -> [| for i in 0 .. lenDestinationSeq + 1 -> "" |] |]
 
         for i = 1 to lenSourceSeq + 1 do
             costs.[i].[0] <- i * deleteCost
@@ -48,10 +44,12 @@ module MinCostStringConversion =
                     ops.[i].[j] <- sprintf "C%s" (sourceSeq.[i - 1])
                 else
                     costs.[i].[j] <- costs.[i - 1].[j - 1] + replaceCost
-                    ops.[i].[j] <- sprintf
-                                       "R%s"
-                                       (sourceSeq.[i - 1]
-                                        + (string) (destinationSeq.[j - 1]))
+
+                    ops.[i].[j] <-
+                        sprintf
+                            "R%s"
+                            (sourceSeq.[i - 1]
+                             + (string) (destinationSeq.[j - 1]))
 
                 if costs.[i - 1].[j] + deleteCost < costs.[i].[j] then
                     costs.[i].[j] <- costs.[i - 1].[j] + deleteCost

@@ -6,5 +6,5 @@ module ReverseWords =
     /// </summary>
     /// <param name="input">String to reverse.</param>
     /// <returns>Reversed string</returns>
-    let reverseWords (input: string) =
+    let reverseWords (input: string): string =
         input.Split() |> Seq.rev |> String.concat " "
