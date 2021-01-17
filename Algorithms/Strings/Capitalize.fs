@@ -27,5 +27,8 @@ module Capitalize =
     let capitalize (sentence: string) =
         match sentence with
         | "" -> ""
-        | s when s.[0] >= 'a' && s.[0] <= 'z' -> sentence.Remove(0, 1).Insert(0, (string) ((char) ((int) s.[0] - 32)))
+        | s when s.[0] >= 'a' && s.[0] <= 'z' ->
+            sentence
+                .Remove(0, 1)
+                .Insert(0, (string) ((char) ((int) s.[0] - 32)))
         | _ -> sentence

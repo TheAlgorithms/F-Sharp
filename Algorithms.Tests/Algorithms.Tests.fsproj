@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    
+    <IsPackable>false</IsPackable>
+    <GenerateProgramFile>false</GenerateProgramFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Strings\ZFunctionTests.fs" />
+    <Compile Include="Strings\WordOccurrenceTests.fs" />
+    <Compile Include="Strings\UpperTests.fs" />
+    <Compile Include="Strings\SwapCaseTests.fs" />
+    <Compile Include="Strings\SplitTests.fs" />
+    <Compile Include="Strings\ReverseWordsTests.fs" />
+    <Compile Include="Strings\ReverseLettersTests.fs" />
+    <Compile Include="Strings\RemoveDuplicatesTests.fs" />
+    <Compile Include="Strings\RabinKarpTests.fs" />
+    <Compile Include="Strings\PrefixFunctionTests.fs" />
+    <Compile Include="Strings\NaiveStringSearchTests.fs" />
+    <Compile Include="Strings\ManacherTests.fs" />
+    <Compile Include="Strings\MinCostStringConversionTests.fs" />
+    <Compile Include="Strings\LowerTests.fs" />
+    <Compile Include="Strings\LevenshteinDistanceTests.fs" />
+    <Compile Include="Strings\KnuthMorrisPrattTests.fs" />
+    <Compile Include="Strings\JaroWinklerTests.fs" />
+    <Compile Include="Strings\IsPalindromeTests.fs" />
+    <Compile Include="Strings\CheckPangramTests.fs" />
+    <Compile Include="Strings\CheckAnagramsTests.fs" />
+    <Compile Include="Strings\CapitalizeTests.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
+    <PackageReference Include="coverlet.collector" Version="1.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Algorithms\Algorithms.fsproj" />
+  </ItemGroup>
+
+</Project>

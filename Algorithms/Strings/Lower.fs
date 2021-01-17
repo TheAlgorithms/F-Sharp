@@ -22,14 +22,18 @@ module Lower =
     /// 'what'
     /// </code>
     /// </example>
-    /// <param name="word"></param>
+    /// <param name="input"></param>
     /// <returns></returns>
-    let lower (word: string): string =
-        let mutable str = ""
-        // converting to ascii value int value and checking to see if char is a capital
-        for letter in word do
-            // letter if it is a capital letter it is getting shift by 32 which makes it a lower case letter
-            if letter >= 'A' && letter <= 'Z'
-            then str <- str + (string) ((char) ((int) letter + 32))
-            else str <- str + (string) letter
-        str
+    let lower (input: string): string =
+        input.Split()
+        |> Array.map
+            (fun word ->
+                word.ToCharArray()
+                |> Array.map
+                    (fun character ->
+                        if character >= 'A' && character <= 'Z' then
+                            char (int character + 32)
+                        else
+                            character)
+                |> (fun characters -> System.String.Concat(characters)))
+        |> String.concat " "

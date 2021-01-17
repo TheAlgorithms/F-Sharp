@@ -13,22 +13,24 @@ module JaroWinkler =
     /// <returns></returns>
     let jaroWinkler (str1: string, str2: string): float =
         let getMatchedCharacters (_str1: string, _str2: string): string =
-            let ref_str2 = ref _str2
-
+            let mutable istr1 = _str1
+            let mutable istr2 = _str2
             let mutable matched = []
-            let limit = min _str1.Length ref_str2.Value.Length
-            for i in 0 .. _str1.Length - 1 do
-                let l = _str1.[i]
-                let left = (int) (max 0 (i - limit))
 
-                let right =
-                    (int) (min (i + limit + 1) ref_str2.Value.Length)
+            let limit =
+                int (floor (double (min _str1.Length str2.Length) / 2.0))
 
-                if str1.[left..right].Contains l then
-                    let value = (string) l
-                    matched <- matched |> List.append [ value ]
-                    ref_str2
-                    := $"{_str2.[0..ref_str2.Value.IndexOf(value)]}{ref_str2.Value.[ref_str2.Value.IndexOf(value) + 1..]}"
+            istr1
+            |> Seq.iteri
+                (fun i l ->
+                    let left = (int) (max 0 (i - limit))
+
+                    let right = (int) (min (i + limit + 1) istr2.Length)
+
+                    if (istr2.[left..right]).Contains(l) then
+                        matched <- List.append matched [ (string) l ]
+                        istr2 <- $"{istr2.[0..istr2.IndexOf(l)]} {istr2.[istr2.IndexOf(l) + 1..]}")
+
             matched |> List.fold (+) ""
 
         // matching characters
@@ -39,27 +41,30 @@ module JaroWinkler =
 
         // Transposition
         let transpositions =
-            float
-                ((double) [ for c1, c2 in List.zip [ matching1 ] [ matching2 ] -> (c1, c2) ].Length
-                 / 2.0)
+            floor (
+                double (
+                    (double)
+                        [ for c1, c2 in List.zip [ matching1 ] [ matching2 ] -> (c1, c2) ]
+                            .Length
+                )
+            )
 
         if matchCount = 0 then
             jaro <- 0.0
         else
             jaro <-
-                (double) 1
-                / (double) 3
-                * ((double) matchCount
-                   / (double) str1.Length
+                1.0 / 3.0
+                * ((double) matchCount / (double) str1.Length
                    + (double) matchCount / (double) str2.Length
                    + ((double) matchCount - transpositions)
                      / (double) matchCount)
 
         // Common prefix up to 4 characters
         let mutable prefixLen = 0
-        for c1, c2 in List.zip [ str1.[..4] ] [ str2.[..4] ] do
-            match c1 with
-            | c2 -> prefixLen <- prefixLen + 1
-            | _ -> ()
+
+        if str1.Length = str2.Length then
+            for c1, c2 in Array.zip (str1.[..4].ToCharArray()) (str2.[..4].ToCharArray()) do
+                if c1 = c2 then
+                    prefixLen <- prefixLen + 1
 
         jaro + 0.1 * (double) prefixLen * (1.0 - jaro)

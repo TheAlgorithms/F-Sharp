@@ -9,34 +9,32 @@ module LevenshteinDistance =
     /// <returns></returns>
     let rec levenshteinDistance (firstWord: string, secondWord: string): int =
         // The longer word should come first
-        // if firstWord.Length < secondWord.Length then
-        //     levenshteinDistance(second_word, first_word)
 
-        // if secondWord.Length = 0 then
-        //     return len(first_word)
         match secondWord.Length with
         | s when s > firstWord.Length -> levenshteinDistance (secondWord, firstWord)
         | 0 -> firstWord.Length
         | _ ->
-            let mutable previousRow = [ secondWord.Length + 1 ]
+            let mutable previousRow = [ 0 .. secondWord.Length ]
 
-            for i in 0 .. firstWord.Length - 1 do
-                let c1 = firstWord.[i]
+            firstWord
+            |> Seq.iteri
+                (fun i c1 ->
+                    let mutable currentRow = [ i + 1 ]
 
-                let mutable currentRow = [ i + 1 ]
+                    secondWord
+                    |> Seq.iteri
+                        (fun j c2 ->
+                            let insertions = previousRow.[j + 1] + 1
+                            let deletions = currentRow.[j] + 1
 
-                for j in 0 .. secondWord.Length do
-                    let c2 = secondWord.[j]
+                            let substitutions =
+                                previousRow.[j] + (if c1 <> c2 then 1 else 0)
 
-                    // Calculate insertions, deletions and substitutions
-                    let insertions = previousRow.[j + 1] + 1
-                    let deletions = currentRow.[j] + 1
-                    let substitutions = previousRow.[j]
+                            // Get the minimum to append to the current row
+                            currentRow <-
+                                currentRow
+                                |> List.append [ (min insertions (min deletions substitutions)) ])
 
-                    // Get the minimum to append to the current row
-                    currentRow <-
-                        currentRow
-                        |> List.append [ (min insertions (min deletions substitutions)) ]
+                    previousRow <- currentRow |> List.rev)
 
-                previousRow <- currentRow
-            previousRow.[-1]
+            previousRow |> List.rev |> List.item 0

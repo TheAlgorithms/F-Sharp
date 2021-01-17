@@ -26,19 +26,20 @@ module CheckPangram =
     let checkPangram (inputString: string): bool =
         let mutable frequency = Set.empty
         let inputStr = inputString.Replace(" ", "") // Replacing all the whitespace in our sentence
+
         for alpha in inputStr do
-            if 'a' <= alpha.Lower() && alpha.Lower() <= 'z'
-            then frequency <- frequency.Add(alpha.Lower())
+            if 'a' <= alpha.Lower() && alpha.Lower() <= 'z' then
+                frequency <- frequency.Add(alpha.Lower())
 
         match frequency.Count with
         | 26 -> true
-        | _ -> false
+        | _ -> if inputStr = "" then true else false
 
     let checkPangramFaster (inputString: string): bool =
-        let mutable flag =
-            [ for i in 1 .. 26 -> false ] |> List.toArray
+        let mutable flag = [| for i in 1 .. 26 -> false |]
 
         for char in inputString do
-            if char.IsLower()
-            then flag.SetValue(false, (int) char - (int) 'a')
-        flag |> Array.forall (fun f -> (not f))
+            if char.IsLower() then
+                flag.SetValue(true, (int) char - (int) 'a')
+
+        flag |> Array.forall (id)

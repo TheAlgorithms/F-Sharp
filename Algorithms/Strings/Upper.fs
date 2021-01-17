@@ -7,12 +7,15 @@ module Upper =
     /// <param name="input">String to change to uppercase.</param>
     /// <returns>Uppercased string</returns>
     let upper (input: string) =
-        let mutable str = ""
-        for phrase in input.Split() do
-            let mutable word = ""
-            for letter in phrase do
-                if letter >= 'a' && letter <= 'z'
-                then word <- word + (string) ((char) ((int) letter - 32))
-                else word <- word + (string) letter
-            str <- str + word + " "
-        str
+        input.Split()
+        |> Array.map
+            (fun word ->
+                word.ToCharArray()
+                |> Array.map
+                    (fun character ->
+                        if character >= 'a' && character <= 'z' then
+                            char (int character - 32)
+                        else
+                            character)
+                |> (fun characters -> System.String.Concat(characters)))
+        |> String.concat " "

@@ -30,15 +30,21 @@ module PrefixFunction =
     let prefixFunction (inputString: string): list<int> =
 
         // List for the result values
-        let mutable prefixResult = [ inputString.Length ] |> List.toArray
+        let mutable prefixResult =
+            [| for i in 0 .. (inputString.Length - 1) -> 0 |]
 
-        for i = 1 to inputString.Length do
+        for i = 1 to (inputString.Length - 1) do
             // Use last results for better performance - dynamic programming
             let mutable j = prefixResult.[i - 1]
+
             while j > 0 && inputString.[i] <> inputString.[j] do
                 j <- prefixResult.[j - 1]
-            if inputString.[i] = inputString.[j] then j <- j + 1
+
+            if inputString.[i] = inputString.[j] then
+                j <- j + 1
+
             prefixResult.SetValue(j, i)
+
         prefixResult |> List.ofArray
 
     /// <summary>

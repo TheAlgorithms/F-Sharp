@@ -37,13 +37,16 @@ module NaiveStringSearch =
     /// <param name="s"></param>
     /// <param name="pattern"></param>
     /// <returns>List of positions</returns>
-    let naivePatternSearch (s: string, pattern: string): list<int> =
-        let patLen = pattern.Length
-        let mutable position = []
-        for i in 1 .. (s.Length - patLen + 1) do
-            let mutable matchFound = true
-            for j in 1 .. (patLen) do
-                if s.[i + j] <> pattern.[j] then matchFound <- false
-            if matchFound
-            then position <- List.append [ i ] <| position
-        position
+    let naivePatternSearch (s: string, pattern: string): int list =
+        s.ToCharArray()
+        |> Seq.mapi
+            (fun i x ->
+                let myv = pattern.[0]
+
+                if x = pattern.[0] then
+                    (i, s.[i..(i + (pattern.Length - 1))])
+                else
+                    (i, ""))
+        |> Seq.where (fun (i, x) -> pattern = x)
+        |> Seq.map (fun (i, x) -> i)
+        |> List.ofSeq
