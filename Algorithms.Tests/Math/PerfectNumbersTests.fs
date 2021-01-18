@@ -7,6 +7,8 @@ open Algorithms.Math
 type PerfectNumbersTests () =
     
     [<TestMethod>]
+    [<DataRow(-1, false)>]
+    [<DataRow(0, false)>]
     [<DataRow(1, false)>]
     [<DataRow(2, false)>]
     [<DataRow(3, false)>]
