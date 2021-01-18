@@ -1,4 +1,4 @@
-﻿namespace Algorithms.Tests.Strings
+namespace Algorithms.Tests.Strings
 
 open Microsoft.VisualStudio.TestTools.UnitTesting
 open Algorithms.Strings
@@ -17,4 +17,3 @@ type JaroWinklerTests () =
     member this.jaroWinkler (str1:string, str2:string, expected:float) =
         let actual = JaroWinkler.jaroWinkler(str1, str2)
         Assert.AreEqual(expected, actual)
-
