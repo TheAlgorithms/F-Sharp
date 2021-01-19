@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Math\PerfectNumbersTests.fs" />
     <Compile Include="Strings\ZFunctionTests.fs" />
     <Compile Include="Strings\WordOccurrenceTests.fs" />
     <Compile Include="Strings\UpperTests.fs" />
