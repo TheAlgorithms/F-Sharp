@@ -9,6 +9,8 @@
 	  <DefineConstants>TRACE</DefineConstants>
 	</PropertyGroup>
 	<ItemGroup>
+	  <Compile Include="Math\Power.fs" />
+	  <Compile Include="Math\Factorial.fs" />
 	  <Compile Include="Math/Perfect_Numbers.fs" />
 	  <Compile Include="Math/Fibonacci.fs" />
 	  <Compile Include="Sort/Quick_Sort.fs" />
