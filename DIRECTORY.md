@@ -31,6 +31,9 @@
 
 ## Algorithms
   * Math
+    * [Abs](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Abs.fs)
+    * [Absmax](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/AbsMax.fs)
+    * [Absmin](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/AbsMin.fs)
     * [Factorial](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Factorial.fs)
     * [Fibonacci](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Fibonacci.fs)
     * [Perfect Numbers](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Perfect_Numbers.fs)
