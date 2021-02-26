@@ -62,9 +62,7 @@ module Manacher =
 
         // create that string
         let s =
-            newInputString.[int (floor (((double) start - (double) maxLength / 2.0)))..(int) (
-                floor ((double) start + (double) maxLength / 2.0 + 1.0)
-            )]
+            newInputString.[int (floor (((double) start - (double) maxLength / 2.0)))..(int) (floor ((double) start + (double) maxLength / 2.0 + 1.0))]
 
         for i in s do
             if i <> '|' then
