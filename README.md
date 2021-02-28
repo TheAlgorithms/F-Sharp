@@ -6,8 +6,9 @@ This repository contains algorithms and data structures implemented in F# for ed
 ## Overview
 + [Algorithms](https://github.com/TheAlgorithms/F-Sharp/tree/main/Algorithms)
   + [Math](https://github.com/TheAlgorithms/F-Sharp/tree/main/Algorithms/Math)
-    + [Perfect Numbers](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Perfect_Numbers.fs)
     + [Fibonacci](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Fibonacci.fs)
+    + [Perfect Numbers](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Perfect_Numbers.fs)
+    + [Power](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Power.fs)
   + [Search](https://github.com/TheAlgorithms/F-Sharp/tree/main/Algorithms/Search)
     + [Binary Search](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Search/BinarySearch.fs)
   + [Sort](https://github.com/TheAlgorithms/F-Sharp/tree/main/Algorithms/Sort)
