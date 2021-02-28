@@ -6,6 +6,7 @@ This repository contains algorithms and data structures implemented in F# for ed
 ## Overview
 + [Algorithms](https://github.com/TheAlgorithms/F-Sharp/tree/main/Algorithms)
   + [Math](https://github.com/TheAlgorithms/F-Sharp/tree/main/Algorithms/Math)
+    + [Abs](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Abs.fs)
     + [Abs Maximum](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/AbsMax.fs)
     + [Abs Minimum](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/AbsMin.fs)
     + [Factorial](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Factorial.fs)
