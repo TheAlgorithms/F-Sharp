@@ -18,7 +18,7 @@ module Manacher =
 
         printfn "%A" newInputString
         // Append last character
-        newInputString <- newInputString + (string) inputString[^1]
+        newInputString <- newInputString + (string) inputString[inputString.Length - 1]
 
         // We will store the starting and ending of previous furthest ending palindromic
         // substring
