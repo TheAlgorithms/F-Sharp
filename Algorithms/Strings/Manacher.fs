@@ -13,18 +13,18 @@ module Manacher =
         let mutable outputString = ""
 
         // Append each character + "|" in new_string for range(0, length-1)
-        for i in inputString.[..(inputString.Length - 1)] do
+        for i in inputString[..(inputString.Length - 1)] do
             newInputString <- newInputString + string (i) + "|"
 
         printfn "%A" newInputString
         // Append last character
-        newInputString <- newInputString + (string) inputString.[^1]
+        newInputString <- newInputString + (string) inputString[^1]
 
         // We will store the starting and ending of previous furthest ending palindromic
         // substring
         let mutable l, r = 0, 0
 
-        // length.[i] shows the length of palindromic substring with center i
+        // length[i] shows the length of palindromic substring with center i
         let length =
             [ for i in 0 .. newInputString.Length -> 1 ]
             |> Array.ofList
@@ -44,10 +44,10 @@ module Manacher =
 
             while i - k >= 0
                   && i + k < newInputString.Length
-                  && newInputString.[k + i] = newInputString.[i - k] do
+                  && newInputString[k + i] = newInputString[i - k] do
                 k <- k + 1
 
-                length.[i] <- 2 * k - 1
+                length[i] <- 2 * k - 1
 
                 // Does this string end after the previously explored end (that is r) ?
                 // if yes the update the new r to the last index of this
@@ -56,13 +56,13 @@ module Manacher =
                     r <- i + k - 1
 
                 // update max_length and start position
-                if maxLength < length.[i] then
-                    maxLength <- length.[i]
+                if maxLength < length[i] then
+                    maxLength <- length[i]
                     start <- i
 
         // create that string
         let s =
-            newInputString.[int (floor (((double) start - (double) maxLength / 2.0)))..(int) (floor ((double) start + (double) maxLength / 2.0 + 1.0))]
+            newInputString[int (floor (((double) start - (double) maxLength / 2.0)))..(int) (floor ((double) start + (double) maxLength / 2.0 + 1.0))]
 
         for i in s do
             if i <> '|' then

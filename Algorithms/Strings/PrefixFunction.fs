@@ -35,12 +35,12 @@ module PrefixFunction =
 
         for i = 1 to (inputString.Length - 1) do
             // Use last results for better performance - dynamic programming
-            let mutable j = prefixResult.[i - 1]
+            let mutable j = prefixResult[i - 1]
 
-            while j > 0 && inputString.[i] <> inputString.[j] do
-                j <- prefixResult.[j - 1]
+            while j > 0 && inputString[i] <> inputString[j] do
+                j <- prefixResult[j - 1]
 
-            if inputString.[i] = inputString.[j] then
+            if inputString[i] = inputString[j] then
                 j <- j + 1
 
             prefixResult.SetValue(j, i)

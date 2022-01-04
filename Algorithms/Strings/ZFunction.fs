@@ -10,8 +10,8 @@ namespace Algorithms.Strings
 module ZFunction =
 
     let goNext (i, zResult: array<int>, s: string) =
-        i + zResult.[i] < s.Length
-        && s.[zResult.[i]] = s.[i + zResult.[i]]
+        i + zResult[i] < s.Length
+        && s[zResult[i]] = s[i + zResult[i]]
 
     /// <summary>
     /// For the given string this function computes value for each index,
@@ -30,18 +30,18 @@ module ZFunction =
             // Case when current index is inside the interval
             if i <= rightPointer then
                 let minEdge =
-                    min (rightPointer - i + 1) (zResult.[i - leftPointer])
+                    min (rightPointer - i + 1) (zResult[i - leftPointer])
 
                 zResult.SetValue(minEdge, i)
 
             while goNext (i, zResult, inputString) do
-                zResult.[i] <- zResult.[i] + 1
+                zResult[i] <- zResult[i] + 1
 
             // if new index's result gives us more right interval,
             // we've to update left_pointer and right_pointer
-            if i + zResult.[i] - 1 > rightPointer then
+            if i + zResult[i] - 1 > rightPointer then
                 leftPointer <- i
-                rightPointer <- i + zResult.[i] - 1
+                rightPointer <- i + zResult[i] - 1
 
         zResult |> List.ofArray
 

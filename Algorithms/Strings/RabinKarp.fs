@@ -49,8 +49,8 @@ module RabinKarp =
 
             // Calculating the hash of pattern and substring of text
             for i in 0 .. (patLen - 1) do
-                patternHash <- (int64 (pattern.[i]) + patternHash * alphabetSize) % modulus
-                textHash <- (int64 (text.[i]) + textHash * alphabetSize) % modulus
+                patternHash <- (int64 (pattern[i]) + patternHash * alphabetSize) % modulus
+                textHash <- (int64 (text[i]) + textHash * alphabetSize) % modulus
 
                 if i <> (patLen - 1) then
                     modulusPower <- (modulusPower * alphabetSize) % modulus
@@ -58,22 +58,22 @@ module RabinKarp =
 
             for i in 0 .. (textLen - patLen + 1) do
                 if textHash = patternHash
-                   && text.[i..i + (patLen - 1)] = pattern then
+                   && text[i..i + (patLen - 1)] = pattern then
                     result <- true
 
                 if not result then
                     if i <> (textLen - patLen) then
                         let first =
-                            (textHash - int64 (text.[i]) * modulusPower)
+                            (textHash - int64 (text[i]) * modulusPower)
                             * alphabetSize
 
-                        let second = int64 (text.[i + patLen])
+                        let second = int64 (text[i + patLen])
                         let third = (first + second) % modulus
 
                         textHash <-
-                            ((((textHash - int64 (text.[i]) * modulusPower)
+                            ((((textHash - int64 (text[i]) * modulusPower)
                                * alphabetSize)
-                              + int64 (text.[i + patLen])) % modulus)
+                              + int64 (text[i + patLen])) % modulus)
                             + modulus
 
             result

@@ -27,10 +27,10 @@ module JaroWinkler =
     
                     let right = int(min (i + limit + 1) istr2.Length)
     
-                    if (istr2.[left..right - 1]).Contains(l) then
+                    if (istr2[left..right - 1]).Contains(l) then
                         matched <- List.append matched [ (string) l ]
                         let myIndex = (istr2.IndexOf(l))
-                        istr2 <- $"{istr2.[0..istr2.IndexOf(l) - 1]} {istr2.[istr2.IndexOf(l) + 1..]}")
+                        istr2 <- $"{istr2[0..istr2.IndexOf(l) - 1]} {istr2[istr2.IndexOf(l) + 1..]}")
     
             matched |> List.fold (+) ""
     
@@ -66,7 +66,7 @@ module JaroWinkler =
         let mutable c1C2BoolList : bool list = []
 
         if str1.Length = str2.Length then
-            for c1, c2 in Array.zip (str1.[..4].ToCharArray()) (str2.[..4].ToCharArray()) do
+            for c1, c2 in Array.zip (str1[..4].ToCharArray()) (str2[..4].ToCharArray()) do
                 if c1 = c2 then
                     c1C2BoolList <- List.append c1C2BoolList [true]
                 else

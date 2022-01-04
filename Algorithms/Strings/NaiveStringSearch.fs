@@ -41,10 +41,10 @@ module NaiveStringSearch =
         s.ToCharArray()
         |> Seq.mapi
             (fun i x ->
-                let myv = pattern.[0]
+                let myv = pattern[0]
 
-                if x = pattern.[0] then
-                    (i, s.[i..(i + (pattern.Length - 1))])
+                if x = pattern[0] then
+                    (i, s[i..(i + (pattern.Length - 1))])
                 else
                     (i, ""))
         |> Seq.where (fun (i, x) -> pattern = x)

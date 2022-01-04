@@ -7,10 +7,10 @@ module KnuthMorrisPratt =
         let mutable j = 1
 
         while j < pattern.Length do
-            if pattern.[i] = pattern.[j] then
+            if pattern[i] = pattern[j] then
                 i <- i + 1
             elif i > 0 then
-                i <- failure.[i - 1]
+                i <- failure[i - 1]
 
             j <- j + 1
             failure <- failure |> List.append [ i ]
@@ -34,7 +34,7 @@ module KnuthMorrisPratt =
         let mutable i, j = 0, 0 // Index into text, pattern
 
         while i < text.Length do
-            if pattern.[j] = text.[i] then
+            if pattern[j] = text[i] then
                 if j = pattern.Length - 1 && (not result) then
                     result <- true
 
@@ -43,7 +43,7 @@ module KnuthMorrisPratt =
             // If this is a prefix in our pattern
             // just go back far enough to continue
             elif j > 0 && (not result) then
-                j <- failure.[j - 1]
+                j <- failure[j - 1]
 
             i <- i + 1
 

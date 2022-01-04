@@ -24,11 +24,11 @@ module LevenshteinDistance =
                     secondWord
                     |> Seq.iteri
                         (fun j c2 ->
-                            let insertions = previousRow.[j + 1] + 1
-                            let deletions = currentRow.[j] + 1
+                            let insertions = previousRow[j + 1] + 1
+                            let deletions = currentRow[j] + 1
 
                             let substitutions =
-                                previousRow.[j] + (if c1 <> c2 then 1 else 0)
+                                previousRow[j] + (if c1 <> c2 then 1 else 0)
 
                             // Get the minimum to append to the current row
                             currentRow <-

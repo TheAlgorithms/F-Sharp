@@ -30,34 +30,34 @@ module MinCostStringConversion =
             [| for i in 0 .. lenSourceSeq + 1 -> [| for i in 0 .. lenDestinationSeq + 1 -> "" |] |]
 
         for i = 1 to lenSourceSeq + 1 do
-            costs.[i].[0] <- i * deleteCost
-            ops.[i].[0] <- sprintf "D%s" (sourceSeq.[i - 1])
+            costs[i][0] <- i * deleteCost
+            ops[i][0] <- sprintf "D%s" (sourceSeq[i - 1])
 
         for i = 1 to lenDestinationSeq + 1 do
-            costs.[0].[i] <- i * insertCost
-            ops.[0].[i] <- sprintf "I%s" (destinationSeq.[i - 1])
+            costs[0][i] <- i * insertCost
+            ops[0][i] <- sprintf "I%s" (destinationSeq[i - 1])
 
         for i in 1 .. lenSourceSeq + 1 do
             for j in 1 .. lenDestinationSeq + 1 do
-                if sourceSeq.[i - 1] = destinationSeq.[j - 1] then
-                    costs.[i].[j] <- costs.[i - 1].[j - 1] + copyCost
-                    ops.[i].[j] <- sprintf "C%s" (sourceSeq.[i - 1])
+                if sourceSeq[i - 1] = destinationSeq[j - 1] then
+                    costs[i][j] <- costs[i - 1][j - 1] + copyCost
+                    ops[i][j] <- sprintf "C%s" (sourceSeq[i - 1])
                 else
-                    costs.[i].[j] <- costs.[i - 1].[j - 1] + replaceCost
+                    costs[i][j] <- costs[i - 1][j - 1] + replaceCost
 
-                    ops.[i].[j] <-
+                    ops[i][j] <-
                         sprintf
                             "R%s"
-                            (sourceSeq.[i - 1]
-                             + (string) (destinationSeq.[j - 1]))
+                            (sourceSeq[i - 1]
+                             + (string) (destinationSeq[j - 1]))
 
-                if costs.[i - 1].[j] + deleteCost < costs.[i].[j] then
-                    costs.[i].[j] <- costs.[i - 1].[j] + deleteCost
-                    ops.[i].[j] <- sprintf "D%s" (sourceSeq.[i - 1])
+                if costs[i - 1][j] + deleteCost < costs[i][j] then
+                    costs[i][j] <- costs[i - 1][j] + deleteCost
+                    ops[i][j] <- sprintf "D%s" (sourceSeq[i - 1])
 
-                if costs.[i].[j - 1] + insertCost < costs.[i].[j] then
-                    costs.[i].[j] <- costs.[i].[j - 1] + insertCost
-                    ops.[i].[j] <- sprintf "I%s" (destinationSeq.[j - 1])
+                if costs[i][j - 1] + insertCost < costs[i][j] then
+                    costs[i][j] <- costs[i][j - 1] + insertCost
+                    ops[i][j] <- sprintf "I%s" (destinationSeq[j - 1])
 
         costs |> Seq.cast<int> |> Seq.toList, ops |> Seq.cast<string> |> Seq.toList
 
@@ -65,7 +65,7 @@ module MinCostStringConversion =
         if i = 0 && j = 0 then
             List.empty
         else
-            match ops.[i].[j] with
+            match ops[i][j] with
             | o when o = 'C' || o = 'R' ->
                 let mutable seq =
                     assembleTransformation (ops, i - 1, j - 1)
