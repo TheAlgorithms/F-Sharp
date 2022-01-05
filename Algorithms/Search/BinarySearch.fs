@@ -1,35 +1,20 @@
 ﻿namespace Algorithms.Search
 
-open System
-
 module BinarySearch =
-    let rec byRecursion (sortedData: IComparable [], item: int, left: int, right: int) =
+    /// Search the target item in a sorted array.
+    /// Returns -1 when the target is not found.
+    /// Time complexity: O(log(sortedData.Length)))
+    let findIndex target sortedData =
+        let rec search l r =
+            let count = r - l
+            let mid = (l + r) / 2
+            let midItem = Array.item mid sortedData
 
-        let middle = left + (right - left) / 2
+            match count <= 1, compare midItem target with
+            | _, 0 -> mid
+            | true, _ -> -1
+            | false, -1 -> search mid r
+            | false, 1 -> search l mid
+            | _ -> exn () |> raise
 
-        match sortedData.[middle] with
-        | s when s.CompareTo(sortedData.[middle]) > item -> byRecursion (sortedData, item, left, middle - 1)
-        | s when s.CompareTo(sortedData.[middle]) < item -> byRecursion (sortedData, item, left, middle + 1)
-        | _ -> middle
-
-    /// <summary>
-    /// Finds index of item in array that equals to item searched for,
-    /// time complexity: O(log(n)),
-    /// space complexity: O(1),
-    /// where n - array size.
-    /// </summary>
-    /// <param name="sortedData">Sorted array to search in.</param>
-    /// <param name="item">Item to search for.</param>
-    /// <returns>Index of item that equals to item searched for or -1 if none found.</returns>
-    let rec findIndex (sortedData: IComparable [], item: int) =
-
-        let left = 0
-        let right = sortedData.Length - 1
-
-        let middle = left + (right - left) / 2
-        let currentItem = sortedData.[middle]
-
-        match currentItem with
-        | c when c.CompareTo(sortedData.[middle]) > item -> findIndex (sortedData, item)
-        | c when c.CompareTo(sortedData.[middle]) < item -> findIndex (sortedData, item)
-        | _ -> item
+        search 0 (Array.length sortedData + 1)
