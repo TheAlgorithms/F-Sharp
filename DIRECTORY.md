@@ -2,10 +2,16 @@
 
 ## Algorithms.Tests
   * Math
+    * [Absmaxtests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/AbsMaxTests.fs)
+    * [Absmintests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/AbsMinTests.fs)
+    * [Abstests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/AbsTests.fs)
     * [Factorialtests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/FactorialTests.fs)
     * [Perfectnumberstests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/PerfectNumbersTests.fs)
     * [Powertests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/PowerTests.fs)
+    * [Primetests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/PrimeTests.fs)
   * [Program](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Program.fs)
+  * Search
+    * [Binarysearchtests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Search/BinarySearchTests.fs)
   * Strings
     * [Capitalizetests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Strings/CapitalizeTests.fs)
     * [Checkanagramstests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Strings/CheckAnagramsTests.fs)
@@ -36,8 +42,9 @@
     * [Absmin](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/AbsMin.fs)
     * [Factorial](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Factorial.fs)
     * [Fibonacci](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Fibonacci.fs)
-    * [Perfect Numbers](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Perfect_Numbers.fs)
+    * [Perfectnumbers](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/PerfectNumbers.fs)
     * [Power](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Power.fs)
+    * [Prime](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Prime.fs)
   * Search
     * [Binarysearch](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Search/BinarySearch.fs)
   * Sort
