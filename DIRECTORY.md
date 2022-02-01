@@ -38,7 +38,6 @@
     * [Fibonacci](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Fibonacci.fs)
     * [Perfect Numbers](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Perfect_Numbers.fs)
     * [Power](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Power.fs)
-  * [Program](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Program.fs)
   * Search
     * [Binarysearch](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Search/BinarySearch.fs)
   * Sort
