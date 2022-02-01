@@ -4,8 +4,8 @@ open Microsoft.VisualStudio.TestTools.UnitTesting
 open Algorithms.Math
 
 [<TestClass>]
-type PerfectNumbersTests () =
-    
+type PerfectNumbersTests() =
+
     [<TestMethod>]
     [<DataRow(-1, false)>]
     [<DataRow(0, false)>]
@@ -22,6 +22,6 @@ type PerfectNumbersTests () =
     [<DataRow(8128, true)>]
     [<DataRow(33550336, true)>]
     [<DataRow(33550337, false)>]
-    member this.IsPerfect (n: int, expected: bool) =
-        let actual = Perfect_Numbers.IsPerfect n
+    member this.Test(n: int, expected: bool) =
+        let actual = PerfectNumbers.isPerfect n
         Assert.AreEqual(expected, actual)
