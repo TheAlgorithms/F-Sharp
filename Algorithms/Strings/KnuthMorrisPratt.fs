@@ -1,7 +1,7 @@
 ﻿namespace Algorithms.Strings
 
 module KnuthMorrisPratt =
-    let getFailureArray (pattern: string): list<int> =
+    let getFailureArray (pattern: string) : list<int> =
         let mutable failure = [ 0 ]
         let mutable i = 0
         let mutable j = 1
@@ -9,11 +9,14 @@ module KnuthMorrisPratt =
         while j < pattern.Length do
             if pattern.[i] = pattern.[j] then
                 i <- i + 1
+                j <- j + 1
+                failure <- failure @ [ i ]
+
             elif i > 0 then
                 i <- failure.[i - 1]
-
-            j <- j + 1
-            failure <- failure |> List.append [ i ]
+            else
+                j <- j + 1
+                failure <- failure @ [ i ]
 
         failure
 
@@ -24,7 +27,7 @@ module KnuthMorrisPratt =
     /// <param name="pattern"></param>
     /// <param name="text"></param>
     /// <returns></returns>
-    let kmp (pattern: string, text: string): bool =
+    let kmp (pattern: string, text: string) : bool =
         // 1) Construct the failure array
         let failure = getFailureArray pattern
 
@@ -36,15 +39,18 @@ module KnuthMorrisPratt =
         while i < text.Length do
             if pattern.[j] = text.[i] then
                 if j = pattern.Length - 1 && (not result) then
+                    i <- text.Length
                     result <- true
 
                 j <- j + 1
+                i <- i + 1
 
             // If this is a prefix in our pattern
             // just go back far enough to continue
             elif j > 0 && (not result) then
                 j <- failure.[j - 1]
 
-            i <- i + 1
+            else
+                i <- i + 1
 
         result
