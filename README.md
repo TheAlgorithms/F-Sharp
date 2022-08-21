@@ -11,6 +11,7 @@ This repository contains algorithms and data structures implemented in F# for ed
     + [Abs Minimum](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/AbsMin.fs)
     + [Factorial](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Factorial.fs)
     + [Fibonacci](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Fibonacci.fs)
+    + [Greatest Common Divisor](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Greatest_Common_Divisor.fs)
     + [Perfect Numbers](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Perfect_Numbers.fs)
     + [Power](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Power.fs)
   + [Search](https://github.com/TheAlgorithms/F-Sharp/tree/main/Algorithms/Search)
