@@ -81,3 +81,5 @@
     * [Upper](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Strings/Upper.fs)
     * [Wordoccurrence](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Strings/WordOccurrence.fs)
     * [Zfunction](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Strings/ZFunction.fs)
+
+## [Hassuffix](https://github.com/TheAlgorithms/F-Sharp/blob/main//HasSuffix.fs)
