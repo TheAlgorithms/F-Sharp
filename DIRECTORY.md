@@ -62,6 +62,7 @@
     * [Capitalize](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Strings/Capitalize.fs)
     * [Checkanagrams](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Strings/CheckAnagrams.fs)
     * [Checkpangram](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Strings/CheckPangram.fs)
+    * [Hasprefix](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Strings/HasPrefix.fs)
     * [Ispalindrome](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Strings/IsPalindrome.fs)
     * [Jarowinkler](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Strings/JaroWinkler.fs)
     * [Knuthmorrispratt](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Strings/KnuthMorrisPratt.fs)
