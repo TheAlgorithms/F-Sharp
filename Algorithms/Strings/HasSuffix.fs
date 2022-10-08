@@ -1,3 +1,5 @@
+namespace Algorithms.Strings
+
 module HasSuffix =
     /// <summary>
     /// Reports string has specified suffix or not.

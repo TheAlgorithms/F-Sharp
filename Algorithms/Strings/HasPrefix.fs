@@ -1,3 +1,5 @@
+namespace Algorithms.Strings
+
 module HasPrefix =
     /// <summary>
     /// Reports string has specified prefix or not.
