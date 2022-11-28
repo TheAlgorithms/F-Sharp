@@ -4,6 +4,7 @@
   * Math
     * [Absmaxtests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/AbsMaxTests.fs)
     * [Absmintests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/AbsMinTests.fs)
+    * [Averagetests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/AverageTests.fs)
     * [Abstests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/AbsTests.fs)
     * [Factorialtests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/FactorialTests.fs)
     * [Perfectnumberstests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/PerfectNumbersTests.fs)
