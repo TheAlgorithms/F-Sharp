@@ -1,5 +1,5 @@
 # The Algorithms - F#
-![.NET Core](https://github.com/TheAlgorithms/F-Sharp/workflows/.NET%20Core/badge.svg)
+[![Run tests on CI](https://github.com/TheAlgorithms/F-Sharp/actions/workflows/tests.yml/badge.svg)](https://github.com/TheAlgorithms/F-Sharp/actions/workflows/tests.yml)
 <br>
 This repository contains algorithms and data structures implemented in F# for eductional purposes.
 
