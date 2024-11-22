@@ -58,13 +58,6 @@ type MinCostStringConversionTests () =
                 let calculatedCost = calculateCost (operations, copyCost, replaceCost, deleteCost, insertCost)
                 Assert.AreEqual (destinationSubstring, actualDestinationSubstring)
                 Assert.AreEqual (costs.[i].[j], calculatedCost)
-    
-    [<TestMethod>]
-    [<DataRow("abbbaba", "abbba")>]
-    [<DataRow("ababa", "ababa")>]
-    member this.assembleTransformation (ops:Operation array array, i:int, j:int, expected:Operation array) =
-        let actual = MinCostStringConversion.assembleTransformation(ops, i, j)
-        Assert.AreEqual(expected, actual)
         
     static member inputForComputeTransformTables =
             seq {
@@ -102,10 +95,7 @@ type MinCostStringConversionTests () =
     [<DynamicData(nameof(MinCostStringConversionTests.inputForComputeTransformTables))>]
     member this.computeTransformTables (sourceString:string, destinationString:string, copyCost:int, replaceCost:int, deleteCost:int, insertCost:int, expected:int array array * Operation array array) =
         let actual = MinCostStringConversion.computeTransformTables(sourceString,destinationString,copyCost,replaceCost,deleteCost,insertCost)
-        printfn $"%A{actual}"
-        printfn "-----"
-        printfn $"%A{expected}"
-        Assert.AreEqual(expected, actual)
+        Assert.IsTrue((expected = actual))
     
     
 
