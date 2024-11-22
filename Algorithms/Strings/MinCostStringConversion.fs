@@ -9,14 +9,14 @@
 namespace Algorithms.Strings
 
 module MinCostStringConversion =
-    
+
     [<RequireQualifiedAccess>]
     type Operation =
         | Copy of char
         | Replace of Source: char * Target: char
         | Delete of char
         | Insert of char
-    
+
     let computeTransformTables
         (
             source: string,
@@ -26,17 +26,17 @@ module MinCostStringConversion =
             deleteCost: int,
             insertCost: int
         ): array<array<int>> * array<array<Operation>> =
-        
+
         let costs =
             Array.init (source.Length + 1) (fun  _ -> Array.init (destination.Length + 1) (fun _ -> None))
-            
+
         let ops =
             Array.init (source.Length + 1) (fun  _ -> Array.init (destination.Length + 1) (fun _ -> None))
-        
+
         costs.[0].[0] <- Some 0
-        ops.[0].[0] <- Some (Operation.Copy 'a') // There is no operation to perform, assigning dummy operation to satisfy compiler 
-        
-        
+        ops.[0].[0] <- Some (Operation.Copy 'a') // There is no operation to perform, assigning dummy operation to satisfy compiler
+
+
         for i = 1 to source.Length do
             costs.[i].[0] <- Some (i * deleteCost)
             ops.[i].[0] <- Some (Operation.Delete source.[i - 1])
@@ -73,11 +73,11 @@ module MinCostStringConversion =
             | Operation.Replace _
             | Operation.Copy _ ->
                 let seq = assembleTransformation (ops, i - 1, j - 1)
-                Array.append seq [| ops[i][j] |] 
+                Array.append seq [| ops[i][j] |]
             | Operation.Delete _ ->
                 let seq = assembleTransformation (ops, i - 1, j)
-                Array.append seq [| ops[i][j] |] 
+                Array.append seq [| ops[i][j] |]
             | Operation.Insert _ ->
                 let seq = assembleTransformation (ops, i , j - 1)
-                Array.append seq [| ops[i][j] |] 
-    
+                Array.append seq [| ops[i][j] |]
+
