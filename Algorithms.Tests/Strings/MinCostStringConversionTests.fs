@@ -6,7 +6,7 @@ open MinCostStringConversion
 
 [<TestClass>]
 type MinCostStringConversionTests () =
-    
+
     let validateAndApply (source: string ) (operations: Operation array) : string =
         operations
         |> Array.mapFold (fun sourcePosition op ->
@@ -27,7 +27,7 @@ type MinCostStringConversionTests () =
         |> Array.choose id
         |> Array.map string
         |> String.concat ""
-        
+
     let calculateCost (operations: Operation array, copyCost:int, replaceCost:int, deleteCost:int, insertCost:int) =
         operations
         |> Array.sumBy (function
@@ -36,8 +36,8 @@ type MinCostStringConversionTests () =
             | Operation.Delete _ -> deleteCost
             | Operation.Insert _ -> insertCost
         )
-            
-                    
+
+
     [<TestMethod>]
     [<DataRow("", "", 1, 2, 3, 4)>]
     [<DataRow("github", "", 1, 2, 3, 4)>]
@@ -48,7 +48,7 @@ type MinCostStringConversionTests () =
     [<DataRow("banana", "apple", 3, 1, 2, 4)>]
     member this.validateResult (source: string, destination: string, copyCost:int, replaceCost:int, deleteCost:int, insertCost:int) =
         let costs, ops = computeTransformTables (source, destination, copyCost, replaceCost, deleteCost, insertCost)
-        
+
         for i = 0 to source.Length do
             for j = 0 to destination.Length do
                 let sourceSubstring = source.Substring(0, i)
@@ -58,7 +58,7 @@ type MinCostStringConversionTests () =
                 let calculatedCost = calculateCost (operations, copyCost, replaceCost, deleteCost, insertCost)
                 Assert.AreEqual (destinationSubstring, actualDestinationSubstring)
                 Assert.AreEqual (costs.[i].[j], calculatedCost)
-        
+
     static member inputForComputeTransformTables =
             seq {
                 yield [|
@@ -96,6 +96,6 @@ type MinCostStringConversionTests () =
     member this.computeTransformTables (sourceString:string, destinationString:string, copyCost:int, replaceCost:int, deleteCost:int, insertCost:int, expected:int array array * Operation array array) =
         let actual = MinCostStringConversion.computeTransformTables(sourceString,destinationString,copyCost,replaceCost,deleteCost,insertCost)
         Assert.IsTrue((expected = actual))
-    
-    
+
+
 
