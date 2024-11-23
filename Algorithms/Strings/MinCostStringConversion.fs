@@ -28,41 +28,37 @@ module MinCostStringConversion =
         ): array<array<int>> * array<array<Operation>> =
 
         let costs =
-            Array.init (source.Length + 1) (fun  _ -> Array.init (destination.Length + 1) (fun _ -> None))
+            Array.init (source.Length + 1) (fun  _ -> Array.init (destination.Length + 1) (fun _ -> 0))
 
         let ops =
-            Array.init (source.Length + 1) (fun  _ -> Array.init (destination.Length + 1) (fun _ -> None))
-
-        costs.[0].[0] <- Some 0
-        ops.[0].[0] <- Some (Operation.Copy 'a') // There is no operation to perform, assigning dummy operation to satisfy compiler
-
+            Array.init (source.Length + 1) (fun  _ -> Array.init (destination.Length + 1) (fun _ -> Operation.Copy 'a'))
 
         for i = 1 to source.Length do
-            costs.[i].[0] <- Some (i * deleteCost)
-            ops.[i].[0] <- Some (Operation.Delete source.[i - 1])
+            costs.[i].[0] <- i * deleteCost
+            ops.[i].[0] <- Operation.Delete source.[i - 1]
 
         for i = 1 to destination.Length do
-            costs.[0].[i] <- Some (i * insertCost)
-            ops.[0].[i] <- Some (Operation.Insert destination.[i - 1])
+            costs.[0].[i] <- i * insertCost
+            ops.[0].[i] <- Operation.Insert destination.[i - 1]
 
         for i in 1 .. source.Length do
             for j in 1 .. destination.Length do
                 if source.[i - 1] = destination.[j - 1] then
-                    costs.[i].[j] <- Some (costs.[i - 1].[j - 1].Value + copyCost)
-                    ops.[i].[j] <- Some (Operation.Copy (source.[i - 1]))
+                    costs.[i].[j] <- costs.[i - 1].[j - 1] + copyCost
+                    ops.[i].[j] <- Operation.Copy (source.[i - 1])
                 else
-                    costs.[i].[j] <- Some (costs.[i - 1].[j - 1].Value + replaceCost)
-                    ops.[i].[j] <- Some (Operation.Replace (source.[i - 1], destination.[j - 1]))
+                    costs.[i].[j] <- costs.[i - 1].[j - 1] + replaceCost
+                    ops.[i].[j] <- Operation.Replace (source.[i - 1], destination.[j - 1])
 
-                if costs.[i - 1].[j].Value + deleteCost < costs.[i].[j].Value then
-                    costs.[i].[j] <- Some (costs.[i - 1].[j].Value + deleteCost)
-                    ops.[i].[j] <- Some (Operation.Delete (source.[i - 1]))
+                if costs.[i - 1].[j] + deleteCost < costs.[i].[j] then
+                    costs.[i].[j] <- costs.[i - 1].[j] + deleteCost
+                    ops.[i].[j] <- Operation.Delete (source.[i - 1])
 
-                if costs.[i].[j - 1].Value + insertCost < costs.[i].[j].Value then
-                    costs.[i].[j] <- Some (costs.[i].[j - 1].Value + insertCost)
-                    ops.[i].[j] <- Some (Operation.Insert destination.[j - 1])
+                if costs.[i].[j - 1] + insertCost < costs.[i].[j] then
+                    costs.[i].[j] <- costs.[i].[j - 1] + insertCost
+                    ops.[i].[j] <- Operation.Insert destination.[j - 1]
 
-        costs |> Array.map (Array.map Option.get), ops |> Array.map (Array.map Option.get)
+        costs, ops
 
     let rec assembleTransformation (ops: array<array<Operation>>, i: int, j: int): array<Operation> =
         printfn $"i={i},j={j},%A{ops}"
