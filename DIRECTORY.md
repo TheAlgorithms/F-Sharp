@@ -1,6 +1,8 @@
 # List of all files
 
 ## Algorithms.Tests
+  * Datastructures
+    * [Trie](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/DataStructures/Trie.fs)
   * Math
     * [Absmaxtests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/AbsMaxTests.fs)
     * [Absmintests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/AbsMinTests.fs)
@@ -37,6 +39,8 @@
     * [Zfunctiontests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Strings/ZFunctionTests.fs)
 
 ## Algorithms
+  * Datastructures
+    * [Trie](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/DataStructures/Trie.fs)
   * Math
     * [Abs](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Abs.fs)
     * [Absmax](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/AbsMax.fs)
