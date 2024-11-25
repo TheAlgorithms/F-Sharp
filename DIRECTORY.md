@@ -2,6 +2,7 @@
 
 ## Algorithms.Tests
   * Datastructures
+    * [Treap](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/DataStructures/Treap.fs)
     * [Trie](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/DataStructures/Trie.fs)
   * Math
     * [Absmaxtests](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/Math/AbsMaxTests.fs)
@@ -40,6 +41,7 @@
 
 ## Algorithms
   * Datastructures
+    * [Treap](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/DataStructures/Treap.fs)
     * [Trie](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/DataStructures/Trie.fs)
   * Math
     * [Abs](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/Math/Abs.fs)
