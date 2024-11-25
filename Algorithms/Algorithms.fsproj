@@ -1,22 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="Math/*.fs" />
     <Compile Include="Search/*.fs" />
     <Compile Include="Sort/*.fs" />
     <Compile Include="Strings/*.fs" />
+    <Compile Include="DataStructures/*.fs" />
   </ItemGroup>
-
 </Project>
