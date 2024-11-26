@@ -82,9 +82,11 @@ module Treap =
                 let updatedRightsLeftChild = merge (Some left) right.LeftChild
                 right.UpdateLeftChild updatedRightsLeftChild |> Some
 
+    // Inserts a new value into the treap, noop if value already exists
     let insert (value: int) (treap: Treap) : Treap =
         let node = TreapNode.create value
         let left, right = split treap.Root value
+        let _, right = split right (value + 1)
         merge (merge left (Some node)) right
         |> fun root -> { Root = root }
 

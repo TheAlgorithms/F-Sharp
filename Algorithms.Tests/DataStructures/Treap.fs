@@ -8,12 +8,11 @@ type TreapTests () =
 
     [<TestMethod>]
     member this.``Test basic operations``() =
-        let mutable treap = empty
-
-        // Test insertion
-        treap <- insert 5 treap
-        treap <- insert 3 treap
-        treap <- insert 7 treap
+        let treap =
+            empty
+            |> insert 5
+            |> insert 3
+            |> insert 7
 
         // Test getKthElement (0-based indexing)
         Assert.AreEqual(Some 3, getKthElement treap 0u)
@@ -35,10 +34,11 @@ type TreapTests () =
 
     [<TestMethod>]
     member this.``Test deletion``() =
-        let mutable treap = empty
-        treap <- insert 5 treap
-        treap <- insert 3 treap
-        treap <- insert 7 treap
+        let mutable treap =
+            empty
+            |> insert 5
+            |> insert 3
+            |> insert 7
 
         // Delete middle element
         treap <- erase 5 treap
@@ -50,6 +50,25 @@ type TreapTests () =
         treap <- erase 5 treap
         Assert.AreEqual(Some 3, getKthElement treap 0u)
         Assert.AreEqual(Some 7, getKthElement treap 1u)
+
+    [<TestMethod>]
+    member this.``Test duplicate insertion``() =
+        let mutable treap = empty
+        treap <- insert 3 treap
+        treap <- insert 5 treap
+        treap <- insert 1 treap
+        treap <- insert 3 treap
+
+        Assert.AreEqual(Some 1, getKthElement treap 0u)
+        Assert.AreEqual(Some 3, getKthElement treap 1u)
+        Assert.AreEqual(Some 5, getKthElement treap 2u)
+        Assert.AreEqual(None, getKthElement treap 3u)
+
+        treap <- erase 3 treap
+        Assert.AreEqual(Some 1, getKthElement treap 0u)
+        Assert.AreEqual(Some 5, getKthElement treap 1u)
+        Assert.AreEqual(None, getKthElement treap 2u)
+
 
     [<TestMethod>]
     member this.``Test order preservation``() =
