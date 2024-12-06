@@ -262,7 +262,7 @@ module AVLTree =
                     | None, None -> None
                     | None, Some rightChild -> Some rightChild
                     | Some leftChild, None -> Some leftChild
-                    | Some leftChild, Some rightChild ->
+                    | Some _leftChild, Some rightChild ->
                         let rightNode, currentValue  = deleteMinValueNode rightChild
                         let node = { node with Value = currentValue }
 
