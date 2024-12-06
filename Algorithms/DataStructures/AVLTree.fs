@@ -59,6 +59,8 @@ module AVLTree =
         Root: Option<AVLNode>
     }
 
+    let empty = { Root = None }
+
     let insert (value: int) (tree: AVLTree) : AVLTree =
         let rec insertImpl (maybeNode: Option<AVLNode>) : AVLNode =
             match maybeNode with
