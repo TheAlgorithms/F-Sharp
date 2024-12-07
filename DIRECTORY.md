@@ -2,6 +2,7 @@
 
 ## Algorithms.Tests
   * Datastructures
+    * [Avltree](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/DataStructures/AVLTree.fs)
     * [Treap](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/DataStructures/Treap.fs)
     * [Trie](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms.Tests/DataStructures/Trie.fs)
   * Math
@@ -41,6 +42,7 @@
 
 ## Algorithms
   * Datastructures
+    * [Avltree](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/DataStructures/AVLTree.fs)
     * [Treap](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/DataStructures/Treap.fs)
     * [Trie](https://github.com/TheAlgorithms/F-Sharp/blob/main/Algorithms/DataStructures/Trie.fs)
   * Math
