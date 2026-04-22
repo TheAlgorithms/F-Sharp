@@ -13,7 +13,7 @@ module Factorial =
         match n with
         | n when n < 0 -> failwith "No factorial for negative numbers"
         | 0 -> 1
-        | n -> { 1 .. n } |> Seq.reduce (*)
+        | n -> seq { 1 .. n } |> Seq.reduce (*)
 
     /// Calculates factorial. Time complexity: O(n)
     let rec byRecursion n =
