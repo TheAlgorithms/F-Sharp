@@ -3,7 +3,7 @@
 module Power =
     /// Calculates x^n. Time complexity: O(√n).
     let byFoldFunction x n =
-        { 1 .. n } |> Seq.fold (fun acc _ -> acc * x) 1
+        seq { 1 .. n } |> Seq.fold (fun acc _ -> acc * x) 1
 
     /// Calculates x^n. x and n can be negative.
     /// Time complexity O(n).
