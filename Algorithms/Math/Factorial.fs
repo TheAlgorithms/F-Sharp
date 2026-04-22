@@ -6,7 +6,7 @@ module Factorial =
         if n < 0 then
             failwith "No factorial for negative numbers"
         else
-            { 1 .. n } |> Seq.fold (fun acc n -> acc * n) 1
+            seq { 1 .. n } |> Seq.fold (fun acc n -> acc * n) 1
 
     /// Calculates factorial. Time complexity: O(n)
     let byReduceFunction n =
